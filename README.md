@@ -1,6 +1,48 @@
 # Object-Oriented-Programming-Concepts-in-C++
 In this repo, we will walk through the basics of OOPs concept...
 
+## Templates
+1) Templates are a mechanism that make it possible to use one function or class to handle many different data types.
+2) Template doesn't really exists until we call it.
+3) template <typename T> or template <class T>
+4) Compiler creates a new instance of a template function for every data type.
+5) T func(T x, T y){}: datatypes of x and y should match. For instance, if datatype of x is double and that of y is int, thn it would generate a compile time error.
+6) We can pass non-type arguments to templates. Non-type parameters are mainly used for specifying max or min values or any other constant value for a particular instance of template. The important thing to note about non-type parameters is, they must be const. Compiler must know the value of non-type parameters at compile time. Because compiler needs to create functions/classes for a specified non-type value at compile time.
+7) Sometime we want a different behaviour of a function/class template for a particular data type. For this, we can create a specialized version for that particular data type. The specialized function or class if cdefined would only be called.
+8) Example of Template Metaprogramming:-
+   #include <iostream>
+   using namespace std;
+ 
+   template<int n> struct funStruct
+   {
+     static const int val = 2*funStruct<n-1>::val;
+   };
+ 
+   template<> struct funStruct<0>
+   {
+     static const int val = 1 ;
+   };
+ 
+   int main()
+   {
+     cout << funStruct<10>::val << endl;
+     return 0;
+   }
+9) Templates vs Macros:-
+    - The macro is expanded without any type checking.
+    - The type of value returned isn't specified.
+    - Bug hunting in case of macros are difficult.
+10) We can inherit a new template from an existing one. For example,
+    template<class T>
+    class NewSample:publicSample<T>
+    {
+    };
+11) Applications of Templates:
+    - The C++ Standard Library provides many useful template classes.
+    - Smart pointer classes that are of great help in avoiding memory leaks and dangling pointers.
+    - Classes in iostream library that let us carry out I/O in C++.
+
+
 ## Exception Handling
 1) The errors that occur at runtime, during execution of the program are called exceptions.
 2) 3 keywords are usd- throw, catch and try.

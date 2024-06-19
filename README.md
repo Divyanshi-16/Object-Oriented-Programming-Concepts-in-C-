@@ -1,6 +1,32 @@
 # Object-Oriented-Programming-Concepts-in-C++
 In this repo, we will walk through the basics of OOPs concept...
 
+## Some Keywords:
+1) Containership
+2) friend Functions & friend Classes:
+   - friend functions are global functions.
+   - not members of any class.
+   - this pointer is never passed to them.
+   - improves the versatility of overloaded operators.
+   - All member functions of the class granted friendship have unrestricted access to the members of the class granting the friendship.
+3) The explicit Keyword:
+   - works only with constructors.
+   - prevnt implicit conversions.
+4) The mutable Keyword
+5) Namespaces:
+   - using a scope resolution operator
+   - through th using keyword
+6) The const Qualifier
+   - to specify that the value of the variable won't change in the entire program.
+   - with a pointer, we can do two things, we can change the contents of the pointer, and we can also change which memory address is gonna point out to.
+   - const int* a/ int const* a : can't modify the contents of the pointer
+   - int* const a : can change the contents of the pointer but can't reassign it to other pointers.
+   - const used methods:
+     int getX() const{}
+   - can be useful in const reference functions
+   - A const object can only call const functions.
+   - One cannot change the value of 'const' variable except at the time of initialization. Compiler does check this.
+
 ## Templates
 1) Templates are a mechanism that make it possible to use one function or class to handle many different data types.
 2) Template doesn't really exists until we call it.
